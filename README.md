@@ -21,6 +21,7 @@ Contains 6 conctac holes for UART console and programming. 1st conntact hole is 
 1. **CHIP_EN** - connect to **GND** to reset contoller.
    
 ![Eltex_SW-PLG01-pinout](https://github.com/user-attachments/assets/3a05f05e-b94a-467c-bb57-12f2a1eecc5e)
+![1765650117166](https://github.com/user-attachments/assets/7be6bf83-5488-4938-bb40-6b297184d881)
 
 ## Custom Firware
 
