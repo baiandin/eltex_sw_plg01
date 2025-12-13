@@ -6,6 +6,9 @@ Eltex SW-PLG01 smart plug is using following chips:
 - BL0937 - AC monitoring.
 - LP2178 - non isolated DC power output.
 
+After configuration reset (press button 6 times fast) listens on 56684/TCP and accepts configuration from mobile App.
+Use `plgreg.py` to upload configuration manually.
+
 ## PINOUT:
 
 Contains 6 conctac holes for UART console and programming. 1st conntact hole is near BL0937, last one is near the board side.
