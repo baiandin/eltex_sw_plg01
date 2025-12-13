@@ -36,10 +36,10 @@ There are 2 options to flash custom firmware:
 ## OpenBeken module configuration
 
 * Button, LED, Relay
-  - GPIO_A4 - Rel
-  - GPIO_A7 - LED_n
-  - GPIO_A8 - BTN
+  - PA4 - Rel
+  - PA7 - LED_n
+  - PA8 - BTN
 * Power Monitoring: 
-  - GPIO_A9 - BL0937.SEL
-  - GPIO_A2 - BL0937.CF1
-  - GPIO_A3 - BL0937.CF
+  - PA9 - BL0937.SEL
+  - PA2 - BL0937.CF1
+  - PA3 - BL0937.CF
