@@ -33,8 +33,13 @@ There are 2 options to flash custom firmware:
 2. Configure device using `plgreg.py` utility to connect to a MQTT broker. After device connected and published parameters you have to publish `device_upgrade` command using MQTT. Device will download and flash OTA firmware.
    * **Topic:** `sys/cmd/<node_id>`, for example `sys/cmd/6063d83b-f235-4f79-8c69-26a14cd7d003`
    * **Data:** `device_upgrade <node_id>|http://example.com/ota.img`, for example `device_upgrade cdfa91fc-d60a-4882-afc6-84e336faf778|http://example.com/OpenRTL87X0C_1.18.226_ota.img` 
-* `python plgreg.py --ssid MySSID --password MyPassword --mqtt-broker 192.168.100.60:1883 --mqtt-login mqttdevice --mqtt-password mqttdevice_pass --node-id swplg01_01 --host 10.24.83.55`
-* MQTT -> `sys/cmd/swplg01_01` -> `device_upgrade swplg01_01|https://github.com/baiandin/eltex_sw_plg01/blob/main/fw/SW-PLG0X_2.5.0-298_ota.img`
+   * `python plgreg.py --ssid MySSID --password MyPassword --mqtt-broker 192.168.100.60:1883 --mqtt-login mqttdevice --mqtt-password mqttdevice_pass --node-id swplg01_01 --host 10.24.83.55`
+   * MQTT -> `sys/cmd/swplg01_01` -> `device_upgrade swplg01_01|https://github.com/baiandin/eltex_sw_plg01/blob/main/fw/SW-PLG0X_2.5.0-298_ota.img`
+
+   You can also configure sys_log:
+   * `syslog_server.py`
+   * MQTT -> `sys/cmd/swplg01_01` -> `sys_log 192.168.0.31:514`
+   * MQTT -> `sys/cmd/swplg01_01` -> `sys_log stop`
 
 ## OpenBeken module configuration
 
