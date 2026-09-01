@@ -32,10 +32,9 @@ There are 2 options to flash custom firmware:
 1. Use [ltchiptool](https://github.com/libretiny-eu/ltchiptool) (tested with version v4.12.2) to read and flash firware. Select AmebaZ2 chip family. OTA firmware offset is 0xC000. This method requires soldering and is more advanced.
 2. Configure device using `plgreg.py` utility to connect to a MQTT broker. After device connected and published parameters you have to publish `device_upgrade` command using MQTT. Device will download and flash OTA firmware.
    * **Topic:** `sys/cmd/<node_id>`, for example `sys/cmd/6063d83b-f235-4f79-8c69-26a14cd7d003`
-   * **Data:** `device_upgrade <node_id>|http://example.com/ota.img`, for example `device_upgrade cdfa91fc-d60a-4882-afc6-84e336faf778|http://example.com/OpenRTL87X0C_1.18.226_ota.img`
-  
-1. python plgreg.py --ssid MySSID --password MyPassword --mqtt-broker 192.168.100.60:1883 --mqtt-login mqttdevice --mqtt-password mqttdevice_pass --node-id swplg01_01 --host 10.24.83.55
-2. MQTT -> sys/cmd/swplg01_01 -> device_upgrade swplg01_01|http://192.168.0.31:8080/fw/SW-PLG0X_2.5.0-298_ota.img
+   * **Data:** `device_upgrade <node_id>|http://example.com/ota.img`, for example `device_upgrade cdfa91fc-d60a-4882-afc6-84e336faf778|http://example.com/OpenRTL87X0C_1.18.226_ota.img` 
+* `python plgreg.py --ssid MySSID --password MyPassword --mqtt-broker 192.168.100.60:1883 --mqtt-login mqttdevice --mqtt-password mqttdevice_pass --node-id swplg01_01 --host 10.24.83.55`
+* MQTT -> `sys/cmd/swplg01_01` -> `device_upgrade swplg01_01|https://github.com/baiandin/eltex_sw_plg01/blob/main/fw/SW-PLG0X_2.5.0-298_ota.img`
 
 ## OpenBeken module configuration
 
