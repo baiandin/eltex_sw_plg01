@@ -33,7 +33,8 @@ There are 2 options to flash custom firmware:
 2. Configure device using `plgreg.py` utility to connect to a MQTT broker. After device connected and published parameters you have to publish `device_upgrade` command using MQTT. Device will download and flash OTA firmware.
    * *optional* Download the latest firmware version from the [OpenBeken repository](https://github.com/openshwprojects/OpenBK7231T_App/releases) `OpenRTL87X0C_1.xx.xxx_ota.img`, and rename the firmware file to `SW-PLG0X_2.5.0-298_ota.img`.
    * **Run python script to connect the smart plug to the MQTT broker:** `python plgreg.py --ssid MySSID --password MyPassword --mqtt-broker 192.168.100.60:1883 --mqtt-login mqttdevice --mqtt-password mqttdevice_pass --node-id swplg01_01 --host 10.24.83.55`
-   * **Execute the update command via MQTT:** MQTT -> Topic: `sys/cmd/swplg01_01` -> Data: `device_upgrade swplg01_01|https://github.com/baiandin/eltex_sw_plg01/blob/main/fw/SW-PLG0X_2.5.0-298_ota.img`
+   *  **Run python script to create local HTTP server:** `python -m http.server 8080`
+   * **Execute the update command via MQTT:** MQTT -> Topic: `sys/cmd/swplg01_01` -> Data: `device_upgrade swplg01_01|http://192.168.0.31:8080/fw/SW-PLG0X_2.5.0-298_ota.img`
 
    You can also configure sys_log:
    * `syslog_server.py`
